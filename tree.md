@@ -193,7 +193,7 @@ q8: {
         { label: "Ja", next: "result17" },
         { label: "Nein", next: "q7" }
       ]
-  }
+  },
   
   
   
