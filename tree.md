@@ -38,7 +38,7 @@ const tree = {
   },
 
   q2: {
-    text: "Bestehen urheberrechtlich relevante Schutzrechte am reproduzierten Originalwerk bzw. der Vorlage? ",
+    text: "Bestehen urheberrechtlich relevante Schutzrechte am reproduzierten Originalwerk bzw. der Vorlage? Achtung: Es ist zu prüfen, ob andere Schutzrechte berührt werden, etwa der Datenschutz oder das Recht am eigenen Bild. Diese können ebenfalls einer Datenpublikation bzw. -weitergabe entgegenstehen.",
     options: [
       { label: "Ja, es handelt sich um ein Werk oder ein Lichtbild.", next: "q5" },
       { label: "Nein.", next: "q6" }
@@ -95,17 +95,108 @@ q8: {
     options: [
       { label: "Es erfolgten schöpferische Eingriffe, etwa werden Beleuchtung und Objektpositionen angepasst oder Kameraparameter eingestellt, wird nachträglich eine Bildauswahl getroffen, uws.", next: "q13" },
       { label: "Es wurde werktreu (nach Protokoll) und ohne erkennbare Gestaltung (z. B. Komposition) ein Digitalisat erstellt (Schnappschüsse/Arbeitsfotos, frontale Reproduktionsfotografie eines Gemäldes oder einer Grafik, 3D-Scan einer Büste o. ä.)", next: "q14" },
-      { label: "Es erfolgte eine rein technische Reproduktion, etwa mittels Filmstreifen- oder Einzugsscanner.", next: "q15"}
+      { label: "Es erfolgte eine rein technische Reproduktion, etwa mittels Filmstreifen- oder Einzugsscanner.", next: "result10"}
     ]
   },
 
   q10: {
       text: "Es handelt sich um ein vergriffenes Werk - es ist auf dem Markt nicht verfügbar (z.B. Einzelstück oder außer Produktion.)", 
       options: [
-      { label: "Ja", next: "q16" },
-      { label: "Nein", next: "q17" }
+      { label: "Ja", next: "q15" },
+      { label: "Nein", next: "result13" }
     ]
   },
+
+  q11: {
+      text: "Der Werkurheber ist länger als 70 Jahre tot bzw. die 50-Jahres-Frist (seit Veröffentlichung bzw. seit Erstellung, wenn unveröffentlicht) am Lichtbild ist abgelaufen.",
+      options: [
+        { label: "Ja", next: "result3" },
+        { label: "Nein", next: "q16" }
+      ]
+  },
+
+  q12: {
+      text: "Ich kann das spätestmögliche Sterbedatum (z.B. 90 Jahre nach Werkentstehung) oder den spätestmöglichen Veröffentlichungszeitpunkt (z. B. erster mir bekannter Druck) plausibel abschätzen.",
+      options: [
+        { label: "Ja", next: "q11" },
+        { label: "Nein", next: "result7" }
+      ]
+  },
+
+  q13: {
+      text: "Es ist beim Digitalisat von einem Lichtbild und damit einer Schutzfrist von 70 Jahren nach dem Tod des Urhebers auszugehen",
+      options: [
+        { label: "Ja", next: "result9" },
+        { label: "Nein", next: "result2" }
+      ]
+  },
+
+  q14: {
+      text: "Handelt es sich um eine bloße Vervielfältigung eines gemeinfreien Werkes?",
+      options: [
+        { label: "Ja", next: "result11" },
+        { label: "Nein", next: "q17" }
+      ]
+  },
+
+  q15: {
+      text: "Kulturinstitutionen dürfen vergriffene Werke zur Bestandsdokumentation online publizieren. Je nach Werktyp werden jährliche Zahlungen an die repräsentativen Verwertungsgesellschaften fällig.",
+      options: [
+        { label: "Perfekt, dann machen wir das so!", next: "result12" },
+        { label: "Wir haben kein Geld für (regelmäßige) Gebühren", next: "result13" }
+      ]
+  },
+
+  q16: {
+      text: "Soll das Werk dauerhaft präsentiert werden, etwa in einem Webportal der Sammlung?",
+      options: [
+        { label: "Ja", next: "q7" },
+        { label: "Nein", next: "q18" }
+      ]
+  },
+        
+  q17: {
+      text: "Es ist von einem Leistungsschutzrecht am Lichtbild (§72 UrhG) mit einer Schutzfrist von 50 Jahren ohne vorherige Veröffentlichung auszugehen. Wurde innerhalb von 50 Jahren das Lichtbild publiziert, so beginnt die 50-Jahres-Frist mit der Publikation.",
+      options: [
+        { label: "Ja", next: "result9" },
+        { label: "Nein", next: "result2" }
+      ]
+  },
+
+  q18: {
+      text: "Erfolgt eine Weitergabe individuell auf Anfrage direkt an Forscher:innen, Lehrende usw.?",
+      options: [
+        { label: "Ja", next: "result14" },
+        { label: "Nein", next: "q19" }
+      ]
+  },
+
+  q19: {
+      text: "Sind die Daten ausschließlich vor Ort an PCs für Mitarbeiter:innen und Nutzer:innen zugänglich?",
+      options: [
+        { label: "Ja", next: "result15" },
+        { label: "Nein", next: "q20" }
+      ]
+  },
+
+  q20: {
+      text: "Soll das Werk zeitlich begrenzt zur Bewerbung einer Ausstellung genutzt werden?",
+      options: [
+        { label: "Ja", next: "result16" },
+        { label: "Nein", next: "q21" }
+      ]
+  },
+
+  q21: {
+      text: "Wird das Werk in einer wissenschaftlichen Publikation diskutiert oder soll in Forschung und Lehre genutzt werden?",
+      options: [
+        { label: "Ja", next: "result17" },
+        { label: "Nein", next: "q7" }
+      ]
+  }
+  
+  
+  
 
 
 
@@ -118,9 +209,22 @@ q8: {
   result3: { text: "Das Werk ist gemeinfrei. Eine Publikation ist unproblematisch. Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
   result4: { text: "Für Nutzungsarten, die über den Vertrag nicht abgedeckt sind, müssen gesondert Nutzungsrechte eingeholt werden.", end: true },
   result5: { text: "Eine Nutzung ist unproblematisch.", end: true },
-  result6: { text: "Es handelt sich um ein verwaistes Werk. Dieses kann nach Registrierung im EUPIO-Portal unter Einhaltung einer 6-Monats-Frist veröffentlicht werden.", end: true },
-  result7: { text: "Eine Veröffentlichung sollte genau abgewogen werden, weil ein Risiko von Forderungen Dritter besteht.", end: true },
+  result6: { text: "Es handelt sich um ein verwaistes Werk. Dieses kann nach Registrierung im EUPIO-Portal unter Einhaltung einer 6-Monats-Frist veröffentlicht werden. Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
+  result7: { text: "Eine Veröffentlichung sollte genau abgewogen werden, weil ein Risiko von Forderungen Dritter besteht. Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
   result8: { text: "", end: true },
+  result9: { text: "Es muss eine Nutzungsvereinbarung mit den Rechteinhaber:innen geschlossen werden.", end: true },
+  result10: { text: "Am Digitalisat sind keine Schutzrechte entstanden.", end: true },
+  result11: { text: "An Reproduktionen gemeinfreier Werke entstehen keine neuen Schutzrechte. Eine Nutzung ist unproblematisch.", end: true },
+  result12: { text: "Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
+  result13: { text: "Es muss eine Nutzungsvereinbarung mit den Rechteinhaber:innen geschlossen werden. Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
+  result14: { text: "Privatkopie (§ 53 UrhG). Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst vorliegen.", end: true },
+  result15: { text: "Vervielfältigungsrecht (§ 60f UrhG). Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
+  result16: { text: "Werbung für die Ausstellung und den öffentlichen Verkauf von Werken (§ 58 UrhG). Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true },
+  result17: { text: "Hier greift das Zitatrecht (§ 63 UrhG) oder Schranke zur Forschungs- und Lehrfreiheit (§ 60a, 60c UrhG). Es ist zusätzlich zu klären, ob Nutzungsrechte am Digitalisat selbst nötig sind.", end: true}
+  
+  
+         
+        
 
 
 };
