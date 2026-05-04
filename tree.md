@@ -2,7 +2,7 @@
 
 Dora Projekt Beschreibung? 
 
-> __Wichtig:__ Die Inhalte der vorliegenden Kurses wurden im __April 2026__ fertig gestellt. Alle im Text referenzierten Paragraphen, Gesetzestexte und rechtlichen Einschätzungen entsprechen dem Rechtsstand zu diesem Zeitpunkt. Da sich die Gesetzgebung und die Rechtsprechung (insbesondere im Bereich Urheberrecht und Datenschutz) ständig weiterentwickeln, sind die Nutzerinnen und Nutzer ausdrücklich dazu verpflichtet, sich anhand aktuell geltender, öffentlich zugänglicher Quellen zu versichern, dass die hier aufgeführten Regelungen weiterhin in ihrer vorliegenden Form gültig sind. Dieser Kurs dient ausschließlich als rechtliche Referenz für die Entwicklung eigener Konzepte und Ansätze im Archivwesen. Er stellt in keinem Fall eine Rechtsberatung dar und kann eine solche auch nicht ersetzen. Für verbindliche rechtliche Auskünfte im Einzelfall sollte stets eine qualifizierte Rechtsberatung hinzugezogen werden.
+> __Wichtig:__ Die Inhalte des vorliegenden Kurses wurden im __April 2026__ fertig gestellt. Alle im Text referenzierten Paragraphen, Gesetzestexte und rechtlichen Einschätzungen entsprechen dem Rechtsstand zu diesem Zeitpunkt. Da sich die Gesetzgebung und die Rechtsprechung (insbesondere im Bereich Urheberrecht und Datenschutz) ständig weiterentwickeln, sind die Nutzerinnen und Nutzer ausdrücklich dazu verpflichtet, sich anhand aktuell geltender, öffentlich zugänglicher Quellen zu versichern, dass die hier aufgeführten Regelungen weiterhin in ihrer vorliegenden Form gültig sind. Dieser Kurs dient ausschließlich als rechtliche Referenz für die Entwicklung eigener Konzepte und Ansätze im Archivwesen. Er stellt in keinem Fall eine Rechtsberatung dar und kann eine solche auch nicht ersetzen. Für verbindliche rechtliche Auskünfte im Einzelfall sollte stets eine qualifizierte Rechtsberatung hinzugezogen werden.
 
 
 # Urheberrechts-Prüfung
@@ -66,7 +66,7 @@ q6: {
     text: "Gibt es einen Vertrag über die Erstellung der Reproduktion(en) des Werkes bzw. Objektes?", 
     options: [
       { label: "Ja, darin ist die Nutzung geregelt (etwa über die Angabe einer CC-Lizenz).", next: "result4" },
-      { label: "Nein, das Digitalisat wurde von technischem Personal erstellt und die Erstellung von Digitalisaten ist in der enrsprechenden Tätigkeitsbeschreibung als Kernaufgabe ausgewiesen.", next: "result5" },
+      { label: "Nein, das Digitalisat wurde von technischem Personal erstellt und die Erstellung von Digitalisaten ist in der entsprechenden Tätigkeitsbeschreibung als Kernaufgabe ausgewiesen.", next: "result5" },
       { label: "Nein, die Abbildung wurde von wissenschaftlichen Mitarbeiter:innen, Volontär:innen, Ehrenamtlichen uws. erstellt.", next: "q9"}
     ]
   },
@@ -93,7 +93,7 @@ q8: {
  q9: { 
     text: "Wie wurde das Digitalisat erstellt?", 
     options: [
-      { label: "Es erfolgten schöpferische Eingriffe, etwa werden Beleuchtung und Objektpositionen angepasst oder Kameraparameter eingestellt, wird nachträglich eine Bildauswahl getroffen, uws.", next: "q13" },
+      { label: "Es erfolgten schöpferische Eingriffe, etwa werden Beleuchtung und Objektpositionen angepasst oder Kameraparameter eingestellt, wird nachträglich eine Bildauswahl getroffen, usw.", next: "q13" },
       { label: "Es wurde werktreu (nach Protokoll) und ohne erkennbare Gestaltung (z. B. Komposition) ein Digitalisat erstellt (Schnappschüsse/Arbeitsfotos, frontale Reproduktionsfotografie eines Gemäldes oder einer Grafik, 3D-Scan einer Büste o. ä.)", next: "q14" },
       { label: "Es erfolgte eine rein technische Reproduktion, etwa mittels Filmstreifen- oder Einzugsscanner.", next: "result10"}
     ]
